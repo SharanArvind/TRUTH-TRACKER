@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TruthTracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+    }
+
+    header {
+        background-color: black;
+        padding: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header-container h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .login-container {
+        margin-top:-200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    .login-container form {
+        width: 100%;
+        background: #000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        text-align: center;
+        margin:30px;
+    }
+    
+    .login-container form input {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+        border: none;
+        background: #333;
+        color: #fffff;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    
+    .login-container form input:hover {
+        background: #555;
+    }
+    
+    .login-container form button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        border: none;
+        background: #00677D;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .login-container form button:hover {
+        background: #00556B;
+    }
+
+    .signup-link p {
+        color: #fff;
+        margin-top: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    
+</style>
+<body>
+    <header>
+        <a href="/">
+        <div class="header-container" style="align-items:center; justify-content:space-between;">
+            <h1 style="margin-right:50px;">TruthTracker</h1>
+        </div>
+    </a>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            <div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

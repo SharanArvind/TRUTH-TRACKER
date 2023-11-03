@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+
+        header {
+            background-color: black;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-container h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            left: 200px;
+            padding: 0;
+            display: flex;
+            
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .video {
+            transform: scale(5.5);
+            flex: 1;
+            margin-left: 600px;
+            padding: 0;
+            min-width:245px;
+        }
+
+        .video video::-webkit-media-controls {
+            display: none !important;
+        }
+        
+        .content {
+            flex: 1;
+            margin:0px;
+            padding: 40px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            line-height: 1.5;
+            min-width:30%%
+            max-width: 600px;
+            font-size: 36px;
+        }
+
+        .tools {
+            flex: 1;
+            margin:0px;
+            padding: 40px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            line-height: 1.5;
+            min-width:30%%
+            max-width: 600px;
+            font-size: 36px;
+        }
+        
+
+        .tools {
+            text-align: center;
+        }
+        
+        .tool-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+
+        }
+        
+        .box {
+            background-color: #232323; /* Background color of the curved square box */
+            border-radius: 10px; /* Adjust as needed */
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            text-align: center;
+            width:250px;
+            transition: transform 0.3s;
+            margin:20px;
+
+        }
+        
+        .box img {
+            min-height:200px;
+            max-height:200px;
+            max-width: 100%;
+            transition: transform 0.3s;
+            border-radius: 10px;
+        }
+
+        .box img:hover {
+            transform: scale(1.3);
+        }
+        
+        .description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 40px;
+            flex: 1;
+            animation-name: slide-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            font-size:20px;
+            max-height:500px;
+            min-width:500px;
+        }
+
+        @keyframes slide-in {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+
+        .image-container {
+            flex-shrink: 0;
+            width: 600px;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            animation-name: fade-in;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .border-container {
+            display: flex;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .border-container{
+            padding: 30px;
+        }
+
+        .curved-box {
+            background-color: #232323;
+            border-radius: 40px;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-right: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+
+            &:hover {
+                background-color: #171010;
+            }
+            }
+
+            footer {
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .popup-profile {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px; /* Increase the width as desired */
+                height: 185px; /* Increase the height as desired */
+                background: black;
+                background-color: #000000;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.99);
+                border-radius: 10%;
+                z-index:1;
+            }
+    
+            /* Styling for the name */
+            .profile-name {
+                text-align: center;
+                margin-top: 10px;
+                color: #fff;
+            }
+    
+            /* Styling for the buttons */
+            .profile-buttons {
+                text-align: center;
+                margin-top: 10px;
+            }
+    
+            /* Styling for the individual buttons */
+            .profile-button {
+                padding: 10px 20px; /* Adjust padding as needed */
+                margin: 5px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px; /* Add rounded corners */
+                font-weight: bold; /* Make the text bold */
+            }
+    
+            /* Styling for the Dashboard button */
+            .profile-button.dashboard-button {
+                background-color: #007bff; /* Blue background color */
+                color: #fff; /* White text color */
+                border-radius: 10%;
+            }
+    
+            /* Styling for the Logout button */
+            .profile-button.logout-button {
+                background-color: #ff0000; /* Red background color */
+                color: #fff; /* White text color */
+                border-radius: 10%;
+            }
+            /* Close button */
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                color: #fff;
+            }
+            
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container" style="align-items:center; justify-content:space-between;">
+            <h1 style="margin-right:50px;">TruthTracker</h1>
+            <nav>
+                <ul>
+                    <li><a href="/working" style="color: #ffffff; text-decoration: none;font-size:15px;">Working</a></li>
+                    <li><a href="/privacy_policy" style="color: #ffffff; text-decoration: none;font-size:15px;">Privacy Policy</a></li>
+                    {% if session['logged_in'] %}
+                    <li><button onclick="openPopup('{{ user_name }}')">Profile</button><li>
+                    {% else %}
+                        <li><a href="/login" class="curved-box" style="margin-top:-40px; font-size:15px; text-decoration:none; color:white; margin-right:5px;">Log In</a></li>
+                        <li><a href="/signup" class="curved-box" style="margin-top:-40px; font-size:15px; text-decoration:none; color:white;">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="profile-popup" class="popup-profile">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <span id="user-name" class="profile-name">{{ user_name }}</span>
+            <div class="profile-buttons">
+                <a href="/dashboard"><button class="profile-button">Dashboard</button></a>
+                <a href="/logout"><button class="profile-button">Logout</button></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="video">
+                <video controls width="50%" autoplay loop muted>
+                    <source src="{{ url_for('download_file', filename='Animation.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="content">
+        <div class="border-container">
+            <div class="description">
+                <h2>Media Authenticity Verification Suite</h2>
+                <p>The Media Authenticity Verification Suite comprises a set of advanced tools that collectively combat the spread of fake content. It includes deepfake detection, image forgery analysis, audio manipulation identification, and a fake news finder. These tools employ cutting-edge technologies like machine learning and forensics to verify the authenticity of media files, ensuring trust and accuracy in a digital age rife with manipulation.</p>
+            </div class="border-container">
+        </div>
+    </div>
+    </div>
+    <div class="tools">
+            <h2>Explore Our tools</h2>
+            <div class="tool-box">
+                <a href="/fake_v">
+                <div class="box">
+                    <img src="{{ url_for('get_image1') }}" alt="Tool 1">
+                </div>
+                </a>
+                <a href="/streamlit">
+                <div class="box">
+                    <img src="{{ url_for('get_image2') }}" alt="Tool 2">
+                </div>
+                </a>
+                <a href="/news">
+                <div class="box">
+                    <img src="{{ url_for('get_image3') }}" alt="Tool 3">
+                </div>
+                <a/>
+                <a href="/audio">
+                <div class="box">
+                    <img src="{{ url_for('get_image4') }}" alt="Tool 4">
+                </div>
+                <a/>
+                <a href="/realcam">
+                    <div class="box">
+                        <img src="{{ url_for('get_image5') }}" alt="Tool 5">
+                    </div>
+                </a>
+            </div>
+</div>
+
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>TruthTracker</p>
+            <p>&copy; 2023 Truth Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+<script>
+    function openPopup() {
+        var popup = document.getElementById('profile-popup');
+        popup.style.display = 'block';
+
+        var profileNamePlaceholder = document.getElementById("user-name");
+        if (profileNamePlaceholder) {
+            profileNamePlaceholder.textContent = userName;
+    }
+}
+
+    function closePopup() {
+        var popup = document.getElementById('profile-popup');
+        popup.style.display = 'none';
+    }
+</script>
+
+
+</html>
+

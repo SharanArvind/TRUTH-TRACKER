@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            overflow-x: auto;
+        }
+
+        header {
+            background-color: black;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-container h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            color:white;
+        }
+        
+        .dropdown-content {
+            margin:10px;
+            margin-left:-60px;
+            display: none;
+            position: absolute;
+            background-color: black;
+            color:white;
+            min-width: 220px;
+            z-index: 1;
+            text-align: left;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            overflow-y: hidden;
+        }
+        
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+            color: #ffffff;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #00556B;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            left: 200px;
+            padding: 0;
+            display: flex;
+            
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        .curved-box {
+            background-color: #232323;
+            border-radius: 40px;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-right: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+
+            &:hover {
+                background-color: #171010;
+            }
+            }
+
+            .container {
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px;
+                background-color: #232323;
+                max-width: 100%;
+            }
+
+            .headings{
+                color:white;
+                text-align:center;
+            }
+
+            .info-box {
+                background-color:black ;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px;
+                color:white;
+            }
+            
+            .info-item {
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+            
+            .info-popup {
+                display: none;
+                background-color: black;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                padding: 20px;
+                color:white;
+            }
+            
+            .info-item:hover .info-popup {
+                display: block;
+            }
+
+            .content-container {
+                display: flex;
+            }
+            .deepfake-images {
+                max-width:50%;
+                flex-wrap: wrap;
+                align-content: flex-start; /* Start from the top of the container */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                background-color: #232323;
+                color: white;
+            }
+
+            .deepfake-videos {
+                flex: 1;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                background-color: #232323;
+                color: white;
+            }
+            
+            .deepfake-videos {
+                margin-left: 20px;
+            }
+            
+            h2 {
+                text-align: center;
+            }
+            
+            .video-box {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .image-container {
+                margin:20px;
+                width: 400px;
+                height: 250px;
+                justify-content:space-between;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            
+            .image-container img {
+                max-width: 100%;
+            }
+            
+            .video-heading {
+                text-align: center;
+                margin: 10px 0;
+            }
+            
+            video {
+                max-width: 100%;
+            }
+
+            .video-box video::-webkit-media-controls {
+                display: none !important;
+            }
+
+            .pop-up {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                background-color: #232323;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
+
+            .pop-up .close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+            
+            footer {
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .footer-content {
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .popup-profile {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 400px; /* Increase the width as desired */
+                height: 185px; /* Increase the height as desired */
+                background: black;
+                background-color: #000000;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.99);
+                border-radius: 10%;
+            }
+    
+            /* Styling for the name */
+            .profile-name {
+                text-align: center;
+                margin-top: 10px;
+                color: #fff;
+            }
+    
+            /* Styling for the buttons */
+            .profile-buttons {
+                text-align: center;
+                margin-top: 10px;
+            }
+    
+            /* Styling for the individual buttons */
+            .profile-button {
+                padding: 10px 20px; /* Adjust padding as needed */
+                margin: 5px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px; /* Add rounded corners */
+                font-weight: bold; /* Make the text bold */
+            }
+    
+            /* Styling for the Dashboard button */
+            .profile-button.dashboard-button {
+                background-color: #007bff; /* Blue background color */
+                color: #fff; /* White text color */
+                border-radius: 10%;
+            }
+    
+            /* Styling for the Logout button */
+            .profile-button.logout-button {
+                background-color: #ff0000; /* Red background color */
+                color: #fff; /* White text color */
+                border-radius: 10%;
+            }
+            /* Close button */
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            a{
+                text-decoration:none;
+                color:inherit;
+            }
+            
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-container" style="align-items:center; justify-content:space-between;">
+            <a href="/"><h1 style="margin-right:50px;">TruthTracker</h1></a>
+            <nav>
+                <ul>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn" style="font-size: 15px; margin-right: 30px;">Tools</a>
+                        <div class="dropdown-content">
+                            <a href="/fake_v" style="font-size: 15px;">Fake Video Detection</a>
+                            <a href="/image" style="font-size: 15px;">Fake image Detection</a>
+                            <a href="/audio" style="font-size: 15px;">Fake audio Detection</a>
+                            <a href="/news" style="font-size: 15px;">Fakenews Detection</a>
+                            <a href="/realcam"style="font-size: 15px;">Realcam Detection</a>
+                            <a href="/fake_news_finder" style="font-size: 15px;">Fake News Profile </a>
+                            <a href="/report" style="font-size: 15px;">Report</a>
+                        </div>
+                    </div>
+                    <li><a href="/working" style="color: #ffffff; text-decoration: none;font-size:15px;">Working</a></li>
+                    <li><a href="/privacy_policy" style="color: #ffffff; text-decoration: none;font-size:15px;">Privacy Policy</a></li>
+                    {% if 'email' in session %}
+                    <li><button onclick="openPopup('{{ user_name }}')">Profile</button><li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    <header>
+        <div id="profile-popup" class="popup-profile">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <span id="user-name" class="profile-name">{{ user_name }}</span>
+            <div class="profile-buttons">
+                <a href="/dashboard"><button class="profile-button">Dashboard</button></a>
+                <a href="/logout"><button class="profile-button">Logout</button></a>
+            </div>
+        </div>
+    <div class="container">
+    <div class="headings">
+        <h2>Detected fake news world wide</h2>
+    </div>
+
+    <div class="info-box">
+        <div class="info-item">
+            <h3>News Title 1</h3>
+            <p>Short description of the detected fake news. Click for more details.</p>
+            <div class="info-popup">
+                <p>Full description of the detected fake news goes here. You can include additional information and details in this popup.</p>
+            </div>
+        </div>
+    
+        <div class="info-item">
+            <h3>News Title 2</h3>
+            <p>Short description of the detected fake news. Click for more details.</p>
+            <div class="info-popup">
+                <p>Full description of the detected fake news goes here. You can include additional information and details in this popup.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-container">
+    <div class="deepfake-images">
+        <h2>Deepfake Images</h2>
+        <div class="image-container" id="image1">
+            <img src="{{ url_for('get_image1') }}" alt="Image 1">
+            <div class="pop-up" id="pop-up1">
+                <img src="{{ url_for('get_image1') }}" alt="Image 1">
+                <p>Description of Image 1</p>
+                <p>Reason for being fake: ...</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('get_image4') }}" alt="Image 2">
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('get_image5') }}" alt="Image 3">
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('get_image5') }}" alt="Image 4">
+        </div>
+    </div>
+    <div class="deepfake-videos">
+        <div class="video-heading">
+        </div>
+        <div class="video-box">
+            <video controls autoplay loop muted>
+                <source src="{{ url_for('download_file', filename='Animation.mp4') }}"  type="video/mp4">
+            </video>
+        </div>
+        <div class="video-box">
+            <video controls autoplay loop muted>
+                <source src="{{ url_for('download_file', filename='Animation.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <h2>Deepfake Videos</h2>
+    </div>
+</div>
+
+
+<body>
+    <footer>
+        <div class="footer-content">
+            <p>TruthTracker</p>
+            <p>&copy; 2023 Truth Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function openPopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'block';
+
+            var profileNamePlaceholder = document.getElementById("user-name");
+            if (profileNamePlaceholder) {
+                profileNamePlaceholder.textContent = userName;
+        }
+    }
+    
+        function closePopup() {
+            var popup = document.getElementById('profile-popup');
+            popup.style.display = 'none';
+        }
+    </script>
+<script>
+
+    document.getElementById("image1").addEventListener("click", function () {
+        // Display the pop-up when the image is clicked
+        document.getElementById("pop-up1").style.display = "block";
+    });
+    
+    // Add event listeners to close the pop-up when clicking outside the pop-up
+    document.getElementById("pop-up1").addEventListener("click", function (event) {
+        if (event.target === this) {
+            this.style.display = "none";
+        }
+    });
+    
+    // Add event listeners to close the pop-up when clicking the close button
+    document.getElementById("pop-up1").getElementsByClassName("close")[0].addEventListener("click", function () {
+        document.getElementById("pop-up1").style.display = "none";
+    });
+</script>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<style>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+        margin:0;
+    }
+
+    header {
+        background-color: black;
+        padding: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-size:20px;
+    }
+
+    .header-container h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .header-container ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-container li {
+        margin-left: 20px;
+    }
+
+    .header-container li:first-child {
+        margin-left: 0;
+    }
+
+    .header-container li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 24px;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    /* Set the background color of the container element */
+    .star-container {
+    background-color: black;
+    position: relative;
+    height: 100vh;
+    }
+
+    /* Generate and position stars randomly within the container */
+    @for $i from 1 through 50 {
+    $x: random(100);
+    $y: random(100);
+    $delay: random(5s);
+    
+    .star:nth-child(#{$i}) {
+        position: absolute;
+        left: $x%;
+        top: $y%;
+        animation: spin linear infinite $delay;
+      }
+    }
+
+    a{
+        text-decoration:none;
+        color:inherit;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+    <div class="header-container">
+        <a href="/" ><h1 style="margin-right:50px;">TruthTracker</h1><a/>
+        <nav>
+        <ul style="justify-content:space-between">
+            <li><a href="/fake_news_finder" style="font-size:15px; margin-right:15px;">Fake News Detection</a></li>
+            <li><a href="/fake_video_detector" style="font-size:15px; margin-right:15px;">Fake Video Detection</a></li>
+            <li><a href="/working" style="font-size:15px; margin-right:15px;">Working</a></li>
+            <li><a href="/privacy_policy" style="font-size:15px; margin-right:15px;">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    </div>
+</header>
+
+<div class="star-container">
+<div class="container">
+    <h1>Report User</h1>
+    <form method="POST" action="/report">
+        <label for="reportUser">Report User:</label>
+        <input type="text" id="reportUser" name="reportUser" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</div>
+
+
+</body>
+</html>
