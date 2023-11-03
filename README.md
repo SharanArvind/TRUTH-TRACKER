@@ -29,11 +29,11 @@ Before you begin, make sure you have Python installed. Then, follow these steps 
 
  2. Install the requirements:
 
-    pip install requirements.txt
+    `pip install requirements.txt`
   
 4. To run the code:
 
-    python appf.py
+    ```python appf.py```
 
 *WORKING:*
 
